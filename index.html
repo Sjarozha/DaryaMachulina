@@ -2,20 +2,20 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Darya Machulina — Account & Sales Manager</title>
+  <title>Darya Machulina – Account Managerin für digitale Projekte</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Darya Machulina – Account & Sales Manager mit Erfahrung in Payment Operations, B2B-Vertrieb und internationaler Kundenbetreuung." />
+  <meta name="description" content="Darya Machulina – Account Managerin für digitale Projekte. Kundenkommunikation, Projektkoordination und strukturierte Zusammenarbeit." />
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-card: #020617;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.12);
-      --text: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border: #1f2933;
-      --radius-xl: 18px;
-      --radius-xxl: 28px;
+      --bg: #f3f4f6;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --primary: #2563eb;
+      --primary-soft: #e0edff;
+      --border: #e5e7eb;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
 
     * {
@@ -26,49 +26,51 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
-      color: var(--text);
+      background: var(--bg);
+      color: var(--text-main);
       line-height: 1.6;
       min-height: 100vh;
     }
 
     .page {
-      max-width: 1000px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 32px 20px 48px;
+      padding: 32px 16px 48px;
     }
 
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 40px;
+      align-items: center;
+      margin-bottom: 24px;
+      gap: 12px;
     }
 
-    .logo {
-      font-weight: 600;
-      letter-spacing: 0.08em;
+    .header-title {
+      font-size: 14px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      font-size: 13px;
       color: var(--text-muted);
+      font-weight: 600;
     }
 
-    .tag {
-      padding: 4px 10px;
+    .header-tag {
+      font-size: 13px;
+      padding: 6px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      font-size: 12px;
+      border: 1px solid var(--border);
+      background: #ffffffaa;
       color: var(--text-muted);
+      white-space: nowrap;
     }
 
     main {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-      gap: 28px;
+      gap: 24px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       main {
         grid-template-columns: 1fr;
       }
@@ -79,392 +81,360 @@
     }
 
     .card {
-      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.12), transparent 55%) var(--bg-card);
-      border-radius: var(--radius-xxl);
-      border: 1px solid rgba(15, 23, 42, 0.9);
-      padding: 24px 22px;
-      box-shadow:
-        0 22px 60px rgba(15, 23, 42, 0.7),
-        0 0 0 0.5px rgba(148, 163, 184, 0.12);
-      backdrop-filter: blur(18px);
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 28px 28px 24px;
     }
 
-    .hero-title {
-      font-size: clamp(26px, 3vw, 32px);
-      font-weight: 600;
-      margin-bottom: 8px;
+    @media (max-width: 600px) {
+      .card {
+        padding: 22px 18px 20px;
+      }
     }
 
-    .hero-subtitle {
-      font-size: 15px;
-      color: var(--accent);
+    .hero-name {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hero-role {
+      font-size: 20px;
       font-weight: 500;
-      margin-bottom: 14px;
+      color: var(--primary);
+      margin-bottom: 18px;
     }
 
     .hero-text {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      max-width: 640px;
     }
 
     .hero-actions {
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     .btn {
-      border-radius: 999px;
-      padding: 9px 16px;
-      font-size: 14px;
-      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 22px;
+      border-radius: 999px;
       border: 1px solid transparent;
+      text-decoration: none;
       cursor: pointer;
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease, border-color 0.2s ease;
+      transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease,
+                  color 0.15s ease, border-color 0.15s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, #38bdf8, #22c55e);
-      color: #0f172a;
-      font-weight: 500;
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.4);
+      background: #1d4ed8;
     }
 
-    .btn-ghost {
-      background: rgba(15, 23, 42, 0.85);
-      border-color: rgba(148, 163, 184, 0.6);
-      color: var(--text-muted);
+    .btn-outline {
+      background: #ffffff;
+      color: var(--text-main);
+      border-color: var(--border);
     }
 
-    .btn-ghost:hover {
-      background: rgba(15, 23, 42, 0.95);
-      border-color: var(--accent);
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
       transform: translateY(-1px);
     }
 
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .meta-item {
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(51, 65, 85, 0.9);
-    }
-
-    .profile-card {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      height: 100%;
-    }
-
-    .avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 28px;
-      background: radial-gradient(circle at 30% 0, #38bdf8, #22c55e);
-      border: 3px solid rgba(15, 23, 42, 0.9);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .avatar-inner {
-      position: absolute;
-      inset: 3px;
-      border-radius: 24px;
-      background: radial-gradient(circle at top, #1f2937, #020617);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 12px;
-      text-align: center;
-      padding: 8px;
-    }
-
-    .section {
-      margin-top: 20px;
-    }
-
     .section-title {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
       font-size: 13px;
-    }
-
-    .pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(30, 64, 175, 0.7);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 10px;
+      margin-top: 4px;
     }
 
     .list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 13px;
+      font-size: 15px;
       color: var(--text-muted);
     }
 
-    .list strong {
-      color: var(--text);
-      font-weight: 500;
+    .list ul {
+      padding-left: 20px;
     }
 
-    .highlight-box {
-      padding: 12px 13px;
-      border-radius: var(--radius-xl);
-      background: var(--accent-soft);
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      font-size: 13px;
-      color: var(--text);
+    .list li + li {
+      margin-top: 6px;
     }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      font-size: 13px;
+    .process-list {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-top: 4px;
     }
 
-    .step {
-      padding: 10px 11px;
-      border-radius: var(--radius-xl);
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(31, 41, 55, 0.9);
+    .process-list ol {
+      padding-left: 22px;
     }
 
-    .step-number {
+    .process-list li + li {
+      margin-top: 4px;
+    }
+
+    .process-list strong {
+      color: var(--text-main);
+    }
+
+    /* Rechte Karte */
+
+    .profile-header {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      border: 1px dashed var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 11px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 4px;
+      color: var(--text-muted);
+      background: #f9fafb;
     }
 
-    .step-title {
-      font-weight: 500;
-      margin-bottom: 4px;
+    .profile-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .profile-role {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tag-pill {
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #f3f4ff;
+      color: #111827;
+      border: 1px solid #e5e7ff;
+      white-space: nowrap;
+    }
+
+    .experience-block {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .experience-block + .experience-block {
+      margin-top: 10px;
+    }
+
+    .experience-block strong {
+      color: var(--text-main);
+    }
+
+    .mini-case {
+      font-size: 15px;
+      background: var(--primary-soft);
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: #1f2937;
+    }
+
+    .contact-list {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .contact-list div + div {
+      margin-top: 4px;
+    }
+
+    .contact-list a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      margin-top: 32px;
-      font-size: 12px;
+      margin-top: 24px;
+      font-size: 13px;
       color: var(--text-muted);
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
       gap: 10px;
-      justify-content: space-between;
     }
 
     .footer-links {
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 10px;
     }
 
-    .footer-link {
-      color: var(--text-muted);
+    .footer-links a {
       text-decoration: none;
+      color: var(--primary);
+      font-size: 13px;
     }
 
-    .footer-link:hover {
-      color: var(--accent);
-    }
-
-    a {
-      color: var(--accent);
+    .footer-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <div class="page">
     <header>
-      <div class="logo">DARYA MACHULINA</div>
-      <div class="tag">Account & Sales Management · Remote · Deutschland</div>
+      <div class="header-title">ACCOUNT MANAGEMENT</div>
+      <div class="header-tag">Remote · Projektbasiert / langfristig</div>
     </header>
 
     <main>
-      <!-- Linke Spalte -->
+      <!-- Linke Karte: Intro, Leistungen, Prozess -->
       <section class="card">
-        <div class="hero">
-          <h1 class="hero-title">Darya Machulina</h1>
-          <div class="hero-subtitle">Account & Sales Managerin für digitale B2B-Projekte</div>
-          <p class="hero-text">
-            Account- und Sales-Managerin mit über 3 Jahren Erfahrung in Payment Operations,
-            B2B-Vertrieb und internationaler Kundenbetreuung (Europa, GUS, Asien).
-            Ich baue langfristige Beziehungen auf, koordiniere interne Teams
-            und sorge dafür, dass Kommunikation, Prozesse und Ergebnisse zusammenpassen.
-          </p>
+        <h1 class="hero-name">Darya Machulina</h1>
+        <div class="hero-role">Account Managerin für digitale Projekte</div>
+        <p class="hero-text">
+          Ich unterstütze Unternehmen, Agenturen und Selbstständige bei Kommunikation,
+          Projektkoordination und Struktur – zuverlässig, klar und effizient.
+          Mein Fokus: Kundenbeziehungen, reibungslose Abläufe und saubere Umsetzung.
+        </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://t.me/machalichh" target="_blank" rel="noopener">
-              Kontakt über Telegram (@machalichh)
-            </a>
-            <a class="btn btn-ghost" href="mailto:damachulina@gmail.com">
-              E-Mail: damachulina@gmail.com
-            </a>
-          </div>
-
-          <div class="meta-row">
-            <div class="meta-item">Basierend in Deutschland (Wöllstadt)</div>
-            <div class="meta-item">Antwort in der Regel innerhalb von 24 Stunden</div>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://t.me/machalichh" target="_blank" rel="noopener">
+            Telegram
+          </a>
+          <a class="btn btn-outline" href="mailto:damachulina@gmail.com">
+            E-Mail
+          </a>
         </div>
 
-        <div class="section">
-          <div class="section-title">Was ich übernehme</div>
-          <div class="list">
-            <div><strong>Account Management:</strong> zentrale Ansprechperson für Kunden, strukturierte Kommunikation und Follow-ups.</div>
-            <div><strong>Sales Development:</strong> Aufbau und Pflege von B2B-Pipelines, Lead-Generierung, Messen & Events.</div>
-            <div><strong>Payment Operations:</strong> Zusammenarbeit mit internen Teams (Trading, Compliance, Risk) und externen Partnern.</div>
-            <div><strong>Reporting & Analyse:</strong> Markt- und Wettbewerbsrecherche, Auswertung von Ergebnissen, Ableitung von Handlungsempfehlungen.</div>
-          </div>
+        <div class="section-title">Wie ich unterstütze</div>
+        <div class="list">
+          <ul>
+            <li>Kundenkommunikation, Calls, Zusammenfassungen und Follow-ups</li>
+            <li>Projektkoordination in Tools wie Notion / Trello / ClickUp</li>
+            <li>Struktur, Priorisierung und Terminplanung mit klaren Deadlines</li>
+            <li>Regelmäßige Status-Updates und verständliche Reports für Entscheider</li>
+          </ul>
         </div>
 
-        <div class="section">
-          <div class="section-title">Arbeitsweise</div>
-          <div class="steps">
-            <div class="step">
-              <div class="step-number">Schritt 1</div>
-              <div class="step-title">Kennenlernen</div>
-              <div>Kurzcall, Ziele, Märkte und aktuelle Herausforderungen besprechen.</div>
-            </div>
-            <div class="step">
-              <div class="step-number">Schritt 2</div>
-              <div class="step-title">Struktur & Set-up</div>
-              <div>Definition von Kanälen, Tools, KPIs und Reporting-Rhythmus.</div>
-            </div>
-            <div class="step">
-              <div class="step-number">Schritt 3</div>
-              <div class="step-title">Operative Zusammenarbeit</div>
-              <div>Laufende Betreuung von Leads, Kunden und Partnern, regelmäßige Updates.</div>
-            </div>
-            <div class="step">
-              <div class="step-number">Schritt 4</div>
-              <div class="step-title">Optimierung</div>
-              <div>Kontinuierliche Verbesserung von Prozessen, Argumentation und Touchpoints.</div>
-            </div>
-          </div>
+        <div class="section-title">Arbeitsprozess</div>
+        <div class="process-list">
+          <ol>
+            <li><strong>Erstgespräch:</strong> Ziele & Aufgaben klären, Rahmen und Erwartungen verstehen.</li>
+            <li><strong>Strukturaufbau:</strong> Tools, Kanäle, Abläufe und Reporting-Rhythmus definieren.</li>
+            <li><strong>Zusammenarbeit:</strong> Aufgabensteuerung, Kommunikation mit Kunden und Team, laufende Updates.</li>
+            <li><strong>Optimierung:</strong> Effizientere Abläufe empfehlen und kontinuierlich anpassen.</li>
+          </ol>
         </div>
       </section>
 
-      <!-- Rechte Spalte -->
-      <aside class="card profile-card">
-        <div class="profile-top" style="display: flex; gap: 16px; align-items: center;">
+      <!-- Rechte Karte: Profil, Skills, Erfahrung, Mini-Case, Kontakt -->
+      <aside class="card">
+        <div class="profile-header">
           <div class="avatar">
-            <div class="avatar-inner">
-              Dein Foto hier<br>(optional)
-            </div>
+            Foto<br>(optional)
           </div>
-
           <div>
-            <div class="profile-name" style="font-size: 18px; font-weight: 600;">Darya Machulina</div>
-            <div class="profile-role" style="font-size: 13px; color: var(--text-muted);">
-              Sales Development & Account Management
-            </div>
-            <div class="profile-badges" style="margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap;">
-              <span class="profile-badge" style="padding: 4px 8px; border-radius: 999px; background: rgba(15,23,42,0.9); border: 1px solid rgba(51,65,85,0.9); font-size: 11px;">Remote / Hybrid</span>
-              <span class="profile-badge" style="padding: 4px 8px; border-radius: 999px; background: rgba(15,23,42,0.9); border: 1px solid rgba(51,65,85,0.9); font-size: 11px;">Europa · GUS · Asien</span>
+            <div class="profile-name">Darya Machulina</div>
+            <div class="profile-role">Account Managerin / Kundenbetreuung</div>
+            <div class="tag-list">
+              <span class="tag-pill">Deutsch · Englisch · Russisch</span>
             </div>
           </div>
         </div>
 
-        <div class="section">
-          <div class="section-title">Sprachen</div>
-          <div class="pill-list">
-            <span class="pill">Deutsch</span>
-            <span class="pill">Englisch</span>
-            <span class="pill">Russisch</span>
-            <span class="pill">Chinesisch (HSK 5)</span>
-          </div>
+        <div class="section-title">Fähigkeiten</div>
+        <div class="skill-chips">
+          <span class="chip">Kundenbetreuung</span>
+          <span class="chip">Kommunikation</span>
+          <span class="chip">Projektkoordination</span>
+          <span class="chip">Notion / Trello / ClickUp</span>
+          <span class="chip">Reporting</span>
+          <span class="chip">Teamkoordination</span>
         </div>
 
-        <div class="section">
-          <div class="section-title">Fähigkeiten</div>
-          <div class="pill-list">
-            <span class="pill">B2B & B2C Sales</span>
-            <span class="pill">Account Management</span>
-            <span class="pill">Payment Operations</span>
-            <span class="pill">Lead-Generierung</span>
-            <span class="pill">Messen & Events</span>
-            <span class="pill">Datenanalyse & Reporting</span>
-            <span class="pill">Notion · Jira · ClickUp · Salesforce</span>
-          </div>
+        <div class="section-title">Erfahrung</div>
+        <div class="experience-block">
+          <strong>[2022–2025]</strong> Online-Projekte: Kurse, Dienstleistungen, KMU.<br />
+          Betreuung mehrerer Projekte parallel, enge Zusammenarbeit mit Teams und Stakeholdern.
+        </div>
+        <div class="experience-block">
+          Erfahrung mit internationaler Kundschaft und Remote-Teams, Fokus auf klare Prozesse
+          und verlässliche Kommunikation.
         </div>
 
-        <div class="section">
-          <div class="section-title">Berufserfahrung</div>
-          <div class="list">
-            <div>
-              <strong>Payment Operations Account Executive · Deriv.com</strong><br/>
-              09/2022 – 01/2025 · Globales Fintech-Unternehmen<br/>
-              Aufbau von Partnerschaften, Markt-Recherche (SEA, GUS, EU), Koordination mit Trading,
-              Compliance und Risk, Vorbereitung von Präsentationen und Angeboten.
-            </div>
-            <div>
-              <strong>Foreign Trade Specialist · BUCE</strong><br/>
-              06/2020 – 09/2022 · Rohstoffhandelsunternehmen<br/>
-              Voller Vertriebscycle von Akquise bis Vertragsabschluss, Betreuung von Schlüsselkunden,
-              Teilnahme an internationalen Messen und Geschäftsreisen (CIS, China).
-            </div>
-          </div>
+        <div class="section-title">Mini-Case</div>
+        <div class="mini-case">
+          Projekt in der Branche [Nische]. Vorher: unklare Kommunikation, viele Ad-hoc-Anfragen,
+          häufige Verzögerungen. Danach: klare Struktur im Task-Tool, feste Check-ins,
+          dokumentierte Entscheidungen und transparente Reports – weniger Stress, mehr Planbarkeit.
         </div>
 
-        <div class="section">
-          <div class="section-title">Ausbildung</div>
-          <div class="list">
-            <div>
-              <strong>Bachelor: Chinesische Sprache</strong><br/>
-              Belarusian State University · Abschluss mit Auszeichnung · GPA 9.2/10
-            </div>
-            <div>
-              Austauschstipendium an der Fudan University, Shanghai (Regierungsstipendium, 1 Jahr; HSK 5).
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="section-title">Kontakt</div>
-          <div class="list">
-            <div>E-Mail: <a href="mailto:damachulina@gmail.com">damachulina@gmail.com</a></div>
-            <div>Telegram: <a href="https://t.me/machalichh" target="_blank">@machalichh</a></div>
-            <div>Telefon: <a href="tel:+4917686067402">+49 176 86067402</a></div>
-            <!-- LinkedIn kannst du später ergänzen -->
-          </div>
+        <div class="section-title">Kontakt</div>
+        <div class="contact-list">
+          <div>E-Mail: <a href="mailto:damachulina@gmail.com">damachulina@gmail.com</a></div>
+          <div>Telegram: <a href="https://t.me/machalichh" target="_blank">@machalichh</a></div>
         </div>
       </aside>
     </main>
 
     <footer>
-      <div>Offen für Positionen im Account Management, Sales Development und Payment Operations.</div>
+      <div>Für langfristige Zusammenarbeit offen.</div>
       <div class="footer-links">
-        <a class="footer-link" href="mailto:damachulina@gmail.com">E-Mail</a>
-        <a class="footer-link" href="https://t.me/machalichh" target="_blank" rel="noopener">Telegram</a>
+        <a href="mailto:damachulina@gmail.com">E-Mail schreiben</a>
+        <a href="https://t.me/machalichh" target="_blank" rel="noopener">Über Telegram kontaktieren</a>
       </div>
     </footer>
   </div>
