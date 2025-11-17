@@ -1,279 +1,472 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<title>Darya Machulina — Account Manager</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Account Manager für digitale Projekte: Kundenkommunikation, Projektkoordination, klare Prozesse.">
-
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #f6f7f9;
-    color: #222;
-    line-height: 1.55;
-  }
-
-  .container {
-    max-width: 1400px; /* Увеличила ширину */
-    margin: 0 auto;
-    padding: 20px 24px; /* Меньше боковых отступов */
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 16px;
-  }
-
-  .logo {
-    font-size: 14px;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    color: #555;
-  }
-
-  .tag {
-    padding: 4px 10px;
-    border-radius: 8px;
-    background: #e4e7ec;
-    font-size: 12px;
-    color: #555;
-  }
-
-  main {
-    display: grid;
-    grid-template-columns: 2.2fr 1.2fr; 
-    gap: 24px;
-  }
-
-  @media (max-width: 900px) {
-    main {
-      grid-template-columns: 1fr;
+  <meta charset="UTF-8" />
+  <title>Darya Machulina — Account & Sales Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Darya Machulina – Account & Sales Manager mit Erfahrung in Payment Operations, B2B-Vertrieb und internationaler Kundenbetreuung." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border: #1f2933;
+      --radius-xl: 18px;
+      --radius-xxl: 28px;
     }
-  }
 
-  .card {
-    background: white;
-    border-radius: 14px;
-    border: 1px solid #e3e5e8;
-    padding: 22px 24px;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  h1 {
-    margin: 0 0 6px;
-    font-size: 30px;
-    font-weight: 600;
-  }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-  .subtitle {
-    color: #0a7acb;
-    font-weight: 500;
-    margin-bottom: 12px;
-  }
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
 
-  p {
-    margin: 0 0 14px;
-    color: #555;
-    font-size: 15px;
-  }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
 
-  .btns {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
 
-  a.btn {
-    text-decoration: none;
-    font-size: 14px;
-    padding: 9px 16px;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    transition: .18s;
-  }
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
 
-  .btn-primary {
-    background: #0a7acb;
-    color: white;
-  }
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 28px;
+    }
 
-  .btn-primary:hover {
-    background: #0666a6;
-  }
+    @media (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
 
-  .btn-light {
-    border-color: #c8ccd1;
-    color: #333;
-    background: #fdfdfd;
-  }
+    .card {
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.12), transparent 55%) var(--bg-card);
+      border-radius: var(--radius-xxl);
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      padding: 24px 22px;
+      box-shadow:
+        0 22px 60px rgba(15, 23, 42, 0.7),
+        0 0 0 0.5px rgba(148, 163, 184, 0.12);
+      backdrop-filter: blur(18px);
+    }
 
-  .btn-light:hover {
-    background: #f1f1f1;
-  }
+    .hero-title {
+      font-size: clamp(26px, 3vw, 32px);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
 
-  .section-title {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin: 18px 0 10px;
-    color: #777;
-  }
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
 
-  ul {
-    margin: 0;
-    padding-left: 18px;
-  }
+    .hero-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
 
-  ul li {
-    margin-bottom: 8px;
-    color: #444;
-    font-size: 14px;
-  }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
 
-  .profile-top {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-  }
+    .btn {
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease, border-color 0.2s ease;
+    }
 
-  .avatar {
-    width: 78px;
-    height: 78px;
-    border-radius: 12px;
-    background: #dfe7ef;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #666;
-    font-size: 12px;
-    text-align: center;
-  }
+    .btn-primary {
+      background: linear-gradient(90deg, #38bdf8, #22c55e);
+      color: #0f172a;
+      font-weight: 500;
+    }
 
-  .pill-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
 
-  .pill {
-    padding: 5px 10px;
-    background: #eef2f6;
-    border-radius: 8px;
-    font-size: 13px;
-    display: inline-block;
-  }
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.85);
+      border-color: rgba(148, 163, 184, 0.6);
+      color: var(--text-muted);
+    }
 
-  footer {
-    margin-top: 30px;
-    font-size: 13px;
-    color: #777;
-    display: flex;
-    justify-content: space-between;
-  }
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
 
-  footer a {
-    text-decoration: none;
-    color: #0a7acb;
-  }
-</style>
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .meta-item {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      height: 100%;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 28px;
+      background: radial-gradient(circle at 30% 0, #38bdf8, #22c55e);
+      border: 3px solid rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .avatar-inner {
+      position: absolute;
+      inset: 3px;
+      border-radius: 24px;
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-align: center;
+      padding: 8px;
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(30, 64, 175, 0.7);
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .list strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .highlight-box {
+      padding: 12px 13px;
+      border-radius: var(--radius-xl);
+      background: var(--accent-soft);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    .step {
+      padding: 10px 11px;
+      border-radius: var(--radius-xl);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    .step-number {
+      font-size: 11px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 4px;
+    }
+
+    .step-title {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-link {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: var(--accent);
+    }
+
+    a {
+      color: var(--accent);
+    }
+  </style>
 </head>
-
 <body>
-<div class="container">
+  <div class="page">
+    <header>
+      <div class="logo">DARYA MACHULINA</div>
+      <div class="tag">Account & Sales Management · Remote · Deutschland</div>
+    </header>
 
-  <header>
-    <div class="logo">ACCOUNT MANAGEMENT</div>
-    <div class="tag">Remote · Projektbasiert / langfristig</div>
-  </header>
+    <main>
+      <!-- Linke Spalte -->
+      <section class="card">
+        <div class="hero">
+          <h1 class="hero-title">Darya Machulina</h1>
+          <div class="hero-subtitle">Account & Sales Managerin für digitale B2B-Projekte</div>
+          <p class="hero-text">
+            Account- und Sales-Managerin mit über 3 Jahren Erfahrung in Payment Operations,
+            B2B-Vertrieb und internationaler Kundenbetreuung (Europa, GUS, Asien).
+            Ich baue langfristige Beziehungen auf, koordiniere interne Teams
+            und sorge dafür, dass Kommunikation, Prozesse und Ergebnisse zusammenpassen.
+          </p>
 
-  <main>
-    <!-- LEFT SIDE -->
-    <section class="card">
-      <h1>Darya Machulina</h1>
-      <div class="subtitle">Account Manager für digitale Projekte</div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://t.me/machalichh" target="_blank" rel="noopener">
+              Kontakt über Telegram (@machalichh)
+            </a>
+            <a class="btn btn-ghost" href="mailto:damachulina@gmail.com">
+              E-Mail: damachulina@gmail.com
+            </a>
+          </div>
 
-      <p>
-        Ich unterstütze Unternehmen, Agenturen und Selbstständige bei Kommunikation,
-        Projektkoordination und Struktur — zuverlässig, klar und effizient.
-      </p>
-
-      <div class="btns">
-        <a class="btn btn-primary" href="https://t.me/machalichh" target="_blank">Telegram</a>
-        <a class="btn btn-light" href="mailto:damachulina@gmail.com">E-Mail</a>
-      </div>
-
-      <div class="section-title">Wie ich unterstütze</div>
-      <ul>
-        <li>Kundenkommunikation, Calls, Zusammenfassungen</li>
-        <li>Projektkoordination (Notion / Trello / ClickUp)</li>
-        <li>Struktur, Priorisierung und Terminplanung</li>
-        <li>Regelmäßige klare Status-Updates und Reports</li>
-      </ul>
-
-      <div class="section-title">Arbeitsprozess</div>
-      <ul>
-        <li><strong>1. Erstgespräch:</strong> Ziele & Aufgaben klären</li>
-        <li><strong>2. Strukturaufbau:</strong> Tools, Kanäle, Abläufe</li>
-        <li><strong>3. Zusammenarbeit:</strong> Aufgabensteuerung & Kommunikation</li>
-        <li><strong>4. Optimierung:</strong> Effizientere Abläufe empfehlen</li>
-      </ul>
-    </section>
-
-    <!-- RIGHT SIDE -->
-    <aside class="card">
-
-      <div class="profile-top">
-        <div class="avatar">Foto<br>(optional)</div>
-        <div>
-          <div style="font-weight:600;">Darya Machulina</div>
-          <div style="font-size:13px; color:#777;">Account Manager / Kundenbetreuung</div>
+          <div class="meta-row">
+            <div class="meta-item">Basierend in Deutschland (Wöllstadt)</div>
+            <div class="meta-item">Antwort in der Regel innerhalb von 24 Stunden</div>
+          </div>
         </div>
+
+        <div class="section">
+          <div class="section-title">Was ich übernehme</div>
+          <div class="list">
+            <div><strong>Account Management:</strong> zentrale Ansprechperson für Kunden, strukturierte Kommunikation und Follow-ups.</div>
+            <div><strong>Sales Development:</strong> Aufbau und Pflege von B2B-Pipelines, Lead-Generierung, Messen & Events.</div>
+            <div><strong>Payment Operations:</strong> Zusammenarbeit mit internen Teams (Trading, Compliance, Risk) und externen Partnern.</div>
+            <div><strong>Reporting & Analyse:</strong> Markt- und Wettbewerbsrecherche, Auswertung von Ergebnissen, Ableitung von Handlungsempfehlungen.</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Arbeitsweise</div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">Schritt 1</div>
+              <div class="step-title">Kennenlernen</div>
+              <div>Kurzcall, Ziele, Märkte und aktuelle Herausforderungen besprechen.</div>
+            </div>
+            <div class="step">
+              <div class="step-number">Schritt 2</div>
+              <div class="step-title">Struktur & Set-up</div>
+              <div>Definition von Kanälen, Tools, KPIs und Reporting-Rhythmus.</div>
+            </div>
+            <div class="step">
+              <div class="step-number">Schritt 3</div>
+              <div class="step-title">Operative Zusammenarbeit</div>
+              <div>Laufende Betreuung von Leads, Kunden und Partnern, regelmäßige Updates.</div>
+            </div>
+            <div class="step">
+              <div class="step-number">Schritt 4</div>
+              <div class="step-title">Optimierung</div>
+              <div>Kontinuierliche Verbesserung von Prozessen, Argumentation und Touchpoints.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rechte Spalte -->
+      <aside class="card profile-card">
+        <div class="profile-top" style="display: flex; gap: 16px; align-items: center;">
+          <div class="avatar">
+            <div class="avatar-inner">
+              Dein Foto hier<br>(optional)
+            </div>
+          </div>
+
+          <div>
+            <div class="profile-name" style="font-size: 18px; font-weight: 600;">Darya Machulina</div>
+            <div class="profile-role" style="font-size: 13px; color: var(--text-muted);">
+              Sales Development & Account Management
+            </div>
+            <div class="profile-badges" style="margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap;">
+              <span class="profile-badge" style="padding: 4px 8px; border-radius: 999px; background: rgba(15,23,42,0.9); border: 1px solid rgba(51,65,85,0.9); font-size: 11px;">Remote / Hybrid</span>
+              <span class="profile-badge" style="padding: 4px 8px; border-radius: 999px; background: rgba(15,23,42,0.9); border: 1px solid rgba(51,65,85,0.9); font-size: 11px;">Europa · GUS · Asien</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Sprachen</div>
+          <div class="pill-list">
+            <span class="pill">Deutsch</span>
+            <span class="pill">Englisch</span>
+            <span class="pill">Russisch</span>
+            <span class="pill">Chinesisch (HSK 5)</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Fähigkeiten</div>
+          <div class="pill-list">
+            <span class="pill">B2B & B2C Sales</span>
+            <span class="pill">Account Management</span>
+            <span class="pill">Payment Operations</span>
+            <span class="pill">Lead-Generierung</span>
+            <span class="pill">Messen & Events</span>
+            <span class="pill">Datenanalyse & Reporting</span>
+            <span class="pill">Notion · Jira · ClickUp · Salesforce</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Berufserfahrung</div>
+          <div class="list">
+            <div>
+              <strong>Payment Operations Account Executive · Deriv.com</strong><br/>
+              09/2022 – 01/2025 · Globales Fintech-Unternehmen<br/>
+              Aufbau von Partnerschaften, Markt-Recherche (SEA, GUS, EU), Koordination mit Trading,
+              Compliance und Risk, Vorbereitung von Präsentationen und Angeboten.
+            </div>
+            <div>
+              <strong>Foreign Trade Specialist · BUCE</strong><br/>
+              06/2020 – 09/2022 · Rohstoffhandelsunternehmen<br/>
+              Voller Vertriebscycle von Akquise bis Vertragsabschluss, Betreuung von Schlüsselkunden,
+              Teilnahme an internationalen Messen und Geschäftsreisen (CIS, China).
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Ausbildung</div>
+          <div class="list">
+            <div>
+              <strong>Bachelor: Chinesische Sprache</strong><br/>
+              Belarusian State University · Abschluss mit Auszeichnung · GPA 9.2/10
+            </div>
+            <div>
+              Austauschstipendium an der Fudan University, Shanghai (Regierungsstipendium, 1 Jahr; HSK 5).
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Kontakt</div>
+          <div class="list">
+            <div>E-Mail: <a href="mailto:damachulina@gmail.com">damachulina@gmail.com</a></div>
+            <div>Telegram: <a href="https://t.me/machalichh" target="_blank">@machalichh</a></div>
+            <div>Telefon: <a href="tel:+4917686067402">+49 176 86067402</a></div>
+            <!-- LinkedIn kannst du später ergänzen -->
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>Offen für Positionen im Account Management, Sales Development und Payment Operations.</div>
+      <div class="footer-links">
+        <a class="footer-link" href="mailto:damachulina@gmail.com">E-Mail</a>
+        <a class="footer-link" href="https://t.me/machalichh" target="_blank" rel="noopener">Telegram</a>
       </div>
-
-      <div class="section-title">Fähigkeiten</div>
-      <div class="pill-wrap">
-        <div class="pill">Kundenbetreuung</div>
-        <div class="pill">Kommunikation</div>
-        <div class="pill">Projektkoordination</div>
-        <div class="pill">Reporting</div>
-        <div class="pill">Notion/Trello</div>
-        <div class="pill">Teamkoordination</div>
-      </div>
-
-      <div class="section-title">Erfahrung</div>
-      <p style="font-size:14px; margin-top:0; color:#444;">
-        <strong>[2022–2025]</strong> Online-Projekte: Kurse, Dienstleistungen, KMU.<br>
-        Bis zu [X] parallele Projekte.<br>
-        Teams zwischen 3–15 Personen begleitet.
-      </p>
-
-      <div class="section-title">Mini-Case</div>
-      <p style="font-size:14px; background:#eef5fb; padding:10px 12px; border-radius:10px;">
-        Projekt in der Branche [Nische].  
-        Vorher: unklare Kommunikation, häufige Verzögerungen.  
-        Danach: klare Struktur, regelmäßige Check-ins, transparente Reports.
-      </p>
-
-      <div class="section-title">Kontakt</div>
-      <p style="font-size:14px; margin-top:0;">
-        E-Mail: <a href="mailto:damachulina@gmail.com">damachulina@gmail.com</a><br>
-        Telegram: <a href="https://t.me/machalichh" target="_blank">@machalichh</a><br>
-      </p>
-
-    </aside>
-  </main>
-
-  <footer>
-    <div>Für langfristige Zusammenarbeit offen.</div>
-    <div><a href="mailto:[DEINE EMAIL]">E-Mail schreiben</a></div>
-  </footer>
-
-</div>
+    </footer>
+  </div>
 </body>
 </html>
-
-
